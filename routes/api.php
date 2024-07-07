@@ -28,7 +28,7 @@ Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:api')
 Route::get('students', [StudentController::class, 'index']);
 
 Route::get('student/{student}', [StudentController::class, 'show']);
-Route::middleware(['auth:api', 'is_admin'])->group(function () {
+Route::middleware(['auth:api'])->group(function () {
     Route::post('student-create', [StudentController::class, 'store']);
 });
 
